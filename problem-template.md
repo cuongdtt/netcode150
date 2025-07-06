@@ -27,6 +27,8 @@
 2. `{problem_number}.{kebab-case-description}.test.js` - Test file
 3. `{problem_number}.READMEs.md` - Problem description (original README)
 
+[Do not implement function]
+
 ### Function Signature:
 ```javascript
 /**
