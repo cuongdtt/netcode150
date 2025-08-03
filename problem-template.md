@@ -29,6 +29,8 @@
 
 [Do not implement function]
 
+[Do not change content of .md file, better format is okay]
+
 ### Function Signature:
 ```javascript
 /**

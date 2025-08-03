@@ -2,7 +2,7 @@ const chokidar = require("chokidar");
 const { spawn } = require("child_process");
 
 const watcher = chokidar.watch("**/*.js", {
-  ignored: "**/*.test.js",
+  ignored: ["node_modules/**", "pnpm-lock.yaml"],
   persistent: true,
   ignoreInitial: true,
 });
