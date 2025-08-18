@@ -128,7 +128,6 @@ When generating this setup in the future:
 
 - Main file: `{problem_number}.{kebab-case-description}.js`
 - Test file: `{problem_number}.{kebab-case-description}.test.js`
-- README: `{problem_number}.READMEs.md`
 - Folder: `{CategoryName}` (no spaces)
 
 ## Test Case Categories
