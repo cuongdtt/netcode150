@@ -27,6 +27,7 @@
 2. `{problem_number}.{kebab-case-description}.test.js` - Test file
 
 [Do not implement function]
+[Do not create Readme file]
 
 [Do not change content of .md file, better format is okay]
 
