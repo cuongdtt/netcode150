@@ -80,17 +80,23 @@ var minimumSumSubarrayOptimizedBruteForce = function (nums, l, r) {
 var minimumSumSubarrayOptimized = function (nums, l, r) {
   let minSum = Number.MAX_SAFE_INTEGER;
 
+  // Iterate over all possible window lengths from l to r
+  // example: l = 1, r = 3
+  // len = 1, 2, 3
   for (let len = l; len <= r; len++) {
     let windowSum = 0;
 
+    // step 1: Initialize the window
     for (let i = 0; i < len && i < nums.length; i++) {
       windowSum += nums[i];
     }
-
+    // Check if the window is valid and update the minimum sum
     if (windowSum > 0) {
       minSum = Math.min(minSum, windowSum);
     }
 
+    // Step 2: Slide the window i = len because we already have the first window
+    // this is the second window
     for (let i = len; i < nums.length; i++) {
       windowSum = windowSum - nums[i - len] + nums[i];
 
