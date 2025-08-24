@@ -29,7 +29,7 @@
 [Do not implement function]
 [Do not create Readme file]
 
-[Do not change content of .md file, better format is okay]
+[Format content of .md file to better look but do not change content]
 
 ### Function Signature:
 ```javascript
