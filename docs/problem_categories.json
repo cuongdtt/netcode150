@@ -1,0 +1,73 @@
+{
+  "category_mapping": {
+    "arrays": {
+      "keywords": ["array", "hash", "hashmap", "hashtable", "map", "set", "duplicate", "anagram", "frequency", "counter"],
+      "problems": [217, 242, 1, 49, 347, 238, 36, 128, 271, 659]
+    },
+    "two_pointers": {
+      "keywords": ["two pointers", "left right", "palindrome", "reverse", "sorted array"],  
+      "problems": [125, 167, 15, 11, 42, 128]
+    },
+    "sliding_window": {
+      "keywords": ["sliding window", "substring", "subarray", "window", "maximum", "minimum", "longest", "shortest"],
+      "problems": [3, 121, 424, 76, 239, 209, 219, 643, 576]
+    },
+    "stack": {
+      "keywords": ["stack", "parentheses", "valid", "bracket", "monotonic", "next greater", "daily temperature"],
+      "problems": [20, 155, 150, 22, 739, 84, 853]
+    },
+    "binary_search": {
+      "keywords": ["binary search", "search", "sorted", "rotated", "target", "matrix"],
+      "problems": [704, 74, 33, 153, 162, 875, 1011]
+    },
+    "linked_list": {
+      "keywords": ["linked list", "listnode", "next", "cycle", "merge", "reverse", "palindrome"],
+      "problems": [21, 141, 206, 876, 19, 143, 2, 138, 25]
+    },
+    "trees": {
+      "keywords": ["tree", "treenode", "binary tree", "root", "left", "right", "traversal", "depth", "height"],
+      "problems": [226, 104, 543, 572, 110, 100, 101, 105, 98, 230, 105, 199, 235, 208, 211]
+    },
+    "tries": {
+      "keywords": ["trie", "prefix", "word", "search", "startswith", "dictionary"],
+      "problems": [208, 211, 212]
+    },
+    "heap": {
+      "keywords": ["heap", "priority queue", "kth", "top k", "median", "merge"],
+      "problems": [703, 1046, 973, 215, 295, 355, 23]
+    },
+    "backtracking": {
+      "keywords": ["backtracking", "combination", "permutation", "generate", "subsets", "phone", "sudoku"],
+      "problems": [78, 90, 46, 47, 39, 40, 216, 17, 79, 131, 51]
+    },
+    "graphs": {
+      "keywords": ["graph", "node", "neighbor", "dfs", "bfs", "clone", "course", "island"],
+      "problems": [133, 207, 210, 684, 261, 323, 200, 994, 417]
+    },
+    "advanced_graphs": {
+      "keywords": ["dijkstra", "minimum spanning tree", "union find", "topological", "shortest path"],
+      "problems": [778, 1584, 743, 787, 269]
+    },
+    "dynamic_programming": {
+      "keywords": ["dp", "dynamic programming", "fibonacci", "climb", "rob", "decode", "coin", "longest increasing", "2d dp", "grid", "matrix", "path", "edit distance", "lcs"],
+      "problems": [70, 198, 213, 5, 322, 139, 300, 377, 72, 91, 62, 55, 63, 64, 97, 309, 518, 494, 115, 329]
+    },
+    "greedy": {
+      "keywords": ["greedy", "interval", "meeting", "jump", "gas", "candy"],
+      "problems": [53, 55, 45, 134, 135, 846, 678]
+    },
+    "intervals": {
+      "keywords": ["interval", "merge", "overlap", "meeting", "schedule"],
+      "problems": [56, 57, 435, 252, 253, 1851]
+    },
+    "math": {
+      "keywords": ["math", "geometry", "rotate", "spiral", "plus one", "power"],
+      "problems": [66, 202, 149, 48, 54, 50, 43, 371]
+    },
+    "bit_manipulation": {
+      "keywords": ["bit", "xor", "and", "or", "shift", "binary", "complement"],
+      "problems": [136, 191, 338, 268, 190, 371, 7]
+    }
+  },
+  "default_category": "arrays"
+}

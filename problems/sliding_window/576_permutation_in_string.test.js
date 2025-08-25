@@ -1,4 +1,4 @@
-const { checkInclusion } = require("./576.permutation-in-string.js");
+const { checkInclusion } = require("./576_permutation_in_string.js");
 
 describe("Permutation in String - README Examples", () => {
   test('s1 = "ab", s2 = "eidbaooo" should return true', () => {

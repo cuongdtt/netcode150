@@ -1,4 +1,4 @@
-const { findMaxAverage } = require("./643.maximum-average-subarray-i.js");
+const { findMaxAverage } = require("./643_maximum_average_subarray_i.js");
 
 describe("Maximum Average Subarray I - README Examples", () => {
   test("nums = [1,12,-5,-6,50,3], k = 4 should return 12.75", () => {

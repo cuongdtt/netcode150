@@ -1,6 +1,6 @@
 const {
   maxSubarrayLength,
-} = require("./3411.maximum-subarray-with-equal-products.js");
+} = require("./3411_maximum_subarray_with_equal_products.js");
 
 describe("Maximum Subarray with Equal Products - README Examples", () => {
   test("nums = [1,2,1,2,1,1,1] should return 5", () => {

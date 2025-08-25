@@ -1,6 +1,6 @@
 const {
   characterReplacement,
-} = require("./424.longest-repeating-character-replacement.js");
+} = require("./424_longest_repeating_character_replacement.js");
 
 describe("Longest Repeating Character Replacement - README Examples", () => {
   test("Example 1: ABAB with k=2", () => {

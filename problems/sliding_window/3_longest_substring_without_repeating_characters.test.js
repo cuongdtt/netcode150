@@ -1,6 +1,6 @@
 const {
   lengthOfLongestSubstring,
-} = require("./3.longest-substring-without-repeating-characters.js");
+} = require("./3_longest_substring_without_repeating_characters.js");
 
 describe("Longest Substring Without Repeating Characters - README Examples", () => {
   test('Example 1: "abcabcbb" should return 3', () => {

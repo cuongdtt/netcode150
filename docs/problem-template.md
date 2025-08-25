@@ -94,6 +94,10 @@ describe('Problem Name - Boundary Conditions', () => {
 describe('Problem Name - Complex Scenarios', () => {
   // Complex scenarios here
 });
+
+describe('Problem Name - User input scenarios', () => {
+  // User input scenarios when needed - let be empty
+});
 ```
 
 ## Implementation Notes

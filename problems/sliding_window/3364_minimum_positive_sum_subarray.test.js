@@ -1,7 +1,7 @@
 const {
   minimumSumSubarray,
   minimumSumSubarrayOptimized,
-} = require("./3364.minimum-positive-sum-subarray.js");
+} = require("./3364_minimum_positive_sum_subarray.js");
 
 describe("Minimum Positive Sum Subarray - README Examples", () => {
   test("nums = [3, -2, 1, 4], l = 2, r = 3 should return 1", () => {

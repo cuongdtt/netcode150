@@ -1,4 +1,4 @@
-const { containsNearbyDuplicate } = require("./219.contains-duplicate-ii.js");
+const { containsNearbyDuplicate } = require("./219_contains_duplicate_ii.js");
 
 describe("Contains Duplicate II - README Examples", () => {
   test("Example 1: nums = [1,2,3,1], k = 3 should return true", () => {

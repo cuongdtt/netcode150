@@ -1,0 +1,31 @@
+# Cursor Rules for LeetCode Problem Solving Repository
+
+## JavaScript Files (.js)
+- DO NOT provide code completions or suggestions for .js files
+- DO NOT auto-implement function bodies 
+- DO NOT suggest algorithms or solutions during typing
+- User will manually implement all function logic
+- Only provide syntax highlighting and basic formatting
+
+## Chat/Validation Mode
+- ALLOW chat-based solution validation and discussion
+- ALLOW explaining algorithms when user asks
+- ALLOW reviewing user's completed solutions
+- ALLOW helping with debugging and optimization
+- Focus on teaching rather than providing direct answers
+
+## Test Files (.test.js)
+- Allow suggestions for test structure and Jest syntax
+- Help with test case organization
+- Assist with assertion statements
+
+## Documentation Files (.md)
+- Provide markdown formatting assistance
+- Help with documentation structure
+- Allow content suggestions for problem descriptions
+
+## General Rules
+- Never auto-complete LeetCode solution algorithms while typing
+- Support learning through chat-based validation and explanation
+- Focus on project structure and tooling support
+- Maintain clean separation between setup and implementation

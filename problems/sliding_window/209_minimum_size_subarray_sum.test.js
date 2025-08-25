@@ -1,4 +1,4 @@
-const { minSubArrayLen } = require("./209.minimum-size-subarray-sum.js");
+const { minSubArrayLen } = require("./209_minimum_size_subarray_sum.js");
 
 describe("Minimum Size Subarray Sum - README Examples", () => {
   test("target = 7, nums = [2,3,1,2,4,3] should return 2", () => {

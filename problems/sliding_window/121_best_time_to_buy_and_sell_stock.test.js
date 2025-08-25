@@ -1,4 +1,4 @@
-const { maxProfit } = require("./121.best-time-to-buy-and-sell-stock.js");
+const { maxProfit } = require("./121_best_time_to_buy_and_sell_stock.js");
 
 describe("Best Time to Buy and Sell Stock - README Examples", () => {
   test("Example 1: [7,1,5,3,6,4] should return 5", () => {
