@@ -4,7 +4,12 @@ This document tracks algorithm approaches, implementation notes, and complexity 
 
 ## Problems in This Category
 
-*No problems currently implemented*
+### **167_two_sum_ii_input_array_is_sorted**: [Status: TODO]
+- **Algorithm**: Two pointers technique on sorted array
+- **Approach**: Use left and right pointers starting from both ends, adjust based on sum comparison with target
+- **Time Complexity**: O(n) - single pass through array
+- **Space Complexity**: O(1) - only using two pointer variables
+- **Key Insight**: Leverage sorted array property to eliminate half of remaining elements on each comparison
 
 ## Two Pointers Best Practices
 

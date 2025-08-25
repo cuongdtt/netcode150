@@ -25,7 +25,8 @@ This is a LeetCode problem-solving repository containing algorithmic solutions o
 │   │   ├── 3_longest_substring_without_repeating_characters.js
 │   │   ├── 3_longest_substring_without_repeating_characters.test.js
 │   │   └── ...
-│   ├── dynamic_programming/        # Merged 1D and 2D DP
+│   ├── 1d_dynamic_programming/     # Linear DP problems
+│   ├── 2d_dynamic_programming/     # Grid and matrix DP problems
 │   ├── heap/                       # Priority queues and heaps
 │   ├── math/                       # Math and geometry problems
 │   └── ...
