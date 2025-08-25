@@ -14,10 +14,11 @@ This is a LeetCode problem-solving repository containing algorithmic solutions o
 │   ├── leetcode-prompt-template.md # Generation workflow
 │   └── problem_categories.json     # Category mapping system
 ├── problems/                       # All LeetCode problems
+│   ├── README.md                   # Algorithm tracking & implementation notes
 │   ├── arrays/                     # Category folders (flat structure)
 │   │   ├── 1_two_sum.js           # Solution files (exact numbers)
 │   │   ├── 1_two_sum.test.js      # Test files  
-│   │   ├── 1_two_sum.md           # Problem documentation
+│   │   ├── 1_two_sum.md           # Problem description only
 │   │   ├── 49_group_anagrams.js
 │   │   └── ...
 │   ├── sliding_window/
@@ -35,15 +36,19 @@ This is a LeetCode problem-solving repository containing algorithmic solutions o
 When the user says "gen {number}", generate a LeetCode problem setup:
 
 ### Generation Workflow
-1. **Use the prompt template** from `docs/leetcode-prompt-template.md`
-2. **Fetch official LeetCode problem #{number}** details
-3. **Auto-determine category** using `docs/problem_categories.json`
-4. **Generate 3 files** directly in category folder with snake_case naming:
+1. **Check if problem already exists** - Skip generation if files exist
+2. **Use the prompt template** from `docs/leetcode-prompt-template.md`
+3. **Fetch official LeetCode problem #{number}** details
+4. **Auto-determine category** using `docs/problem_categories.json`
+5. **Generate 3 files** directly in category folder with snake_case naming:
    - `{exact_number}_{snake_case_title}.js` - Empty function with TODO comment
    - `{exact_number}_{snake_case_title}.test.js` - Comprehensive test cases  
-   - `{exact_number}_{snake_case_title}.md` - Problem documentation
+   - `{exact_number}_{snake_case_title}.md` - Problem description only (no algorithm details)
+6. **Update problems/README.md** - Add algorithm tracking entry with [Status: TODO]
 
 ### Critical Rules for Generation
+- **CHECK if problem already exists first** - skip generation if any files exist
+- **DO NOT overwrite existing problems** - respect existing implementations
 - **DO NOT implement function bodies** - leave empty with `// TODO: Implement solution`
 - **DO NOT add code suggestions** - user implements manually
 - **DO create comprehensive test cases** covering all scenarios
@@ -52,6 +57,8 @@ When the user says "gen {number}", generate a LeetCode problem setup:
 - **DO use exact problem numbers** without padding (1, 20, 576, 3364)
 - **DO place files directly in category folders** (flat structure)
 - **DO auto-detect category** using the mapping system
+- **DO keep .md files simple** - only problem description, constraints, examples
+- **DO add algorithm tracking to problems/README.md** with [Status: TODO]
 
 ## Commands
 
@@ -105,6 +112,8 @@ Tests are organized into 5 standard describe blocks:
 - Use `docs/leetcode-prompt-template.md` for new problem generation
 - Files are stored flat within category folders with snake_case naming
 - Use `docs/problem_categories.json` for automatic category detection
+- **Algorithm tracking**: Update `problems/README.md` when implementing solutions
+- **Separation of concerns**: Problem descriptions in `.md`, algorithm notes in `problems/README.md`
 
 ### Custom Tooling
 - `test-watcher.js` provides automatic test running on file changes

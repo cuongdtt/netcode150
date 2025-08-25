@@ -7,18 +7,23 @@ Use this prompt when the user says "gen {number}" to generate a LeetCode problem
 ```
 Generate LeetCode problem #{number} setup with the following requirements:
 
-1. **Fetch Problem Information**: Get the official problem title, description, constraints, and examples from LeetCode problem #{number}
+1. **Check if Problem Already Exists**:
+   - Look for existing files: {number}_{snake_case_title}.js/.test.js/.md
+   - If ANY of these files exist, skip generation and notify user
+   - Do NOT overwrite existing problem setups
 
-2. **Auto-Determine Category**: 
+2. **Fetch Problem Information**: Get the official problem title, description, constraints, and examples from LeetCode problem #{number}
+
+3. **Auto-Determine Category**: 
    - Use problem_categories.json to determine the correct category
    - Check problem number in category mappings or use keywords from title/description
    - Default to "arrays" if category cannot be determined
 
-3. **Create Files in Category Folder**: 
+4. **Create Files in Category Folder**: 
    - Place files directly in: problems/{category}/
    - Use flat structure (no individual problem folders)
 
-4. **Generate 3 Files**:
+5. **Generate 3 Files**:
 
 ### File 1: `{number}_{snake_case_title}.js`
 ```javascript
@@ -46,10 +51,19 @@ Include:
 - Problem description
 - Constraints
 - Examples with explanations
-- Algorithm approach hints
-- Time/Space complexity targets
+
+**Do NOT include:**
+- Algorithm approaches
+- Implementation notes
+- Time/Space complexity analysis
+- Solution hints
+(These belong in problems/README.md for tracking)
+
+6. **Update problems/README.md** - Add algorithm tracking entry with [Status: TODO] (only if new problem)
 
 ## Generation Rules:
+- **CHECK if problem already exists first** - if files exist, skip generation and notify user
+- **DO NOT overwrite existing problems** - respect existing implementations
 - **DO NOT implement the function body** - leave it empty with TODO comment
 - **DO NOT add AI code suggestions** - the user will implement manually
 - **DO include comprehensive test cases** based on problem requirements
@@ -58,6 +72,8 @@ Include:
 - **DO use exact problem numbers without padding (1, 20, 576, 3364)**
 - **DO export the main function for testing**
 - **DO place files directly in category folder (flat structure)**
+- **DO keep .md files simple** - only problem description, constraints, examples
+- **DO add algorithm tracking entry to problems/README.md** with TODO status
 
 ## Naming Examples:
 - Problem #1 "Two Sum" → problems/arrays/1_two_sum.js
@@ -79,3 +95,5 @@ Use docs/problem_categories.json to determine category based on:
 - Generate comprehensive test cases
 - Use automatic category detection
 - Use flat structure within category folders with snake_case naming
+- Keep problem .md files simple (description + constraints + examples only)
+- Add algorithm tracking entry to problems/README.md with [Status: TODO]
