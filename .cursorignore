@@ -1,0 +1,4 @@
+# Cursor ignore file - exclude files from AI suggestions and indexing
+
+# Ignore all .js files in problems directory (LeetCode solutions)
+problems/**/*.js
