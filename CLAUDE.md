@@ -31,11 +31,18 @@ This is a LeetCode problem-solving repository containing algorithmic solutions o
 │   └── ...
 ```
 
-## LeetCode Problem Generation
+## LeetCode Problem Commands
 
+### Problem Generation
 When the user says "gen {number}", generate a LeetCode problem setup:
 
-### Generation Workflow
+### Solution Analysis  
+When the user says "check {number}", analyze and verify solution correctness and efficiency:
+
+### Solution Generation
+When the user says "solution {number}", generate AI-powered solutions with multiple approaches:
+
+#### Problem Generation Workflow
 1. **Check if problem already exists** - Skip generation if files exist
 2. **Use the prompt template** from `docs/leetcode-prompt-template.md`
 3. **Fetch official LeetCode problem #{number}** details
@@ -46,7 +53,25 @@ When the user says "gen {number}", generate a LeetCode problem setup:
    - `{exact_number}_{snake_case_title}.md` - Problem description only (no algorithm details)
 6. **Update problems/README.md** - Add algorithm tracking entry with [Status: TODO]
 
-### Critical Rules for Generation
+#### Solution Analysis Workflow
+1. **Use the prompt template** from `docs/check-prompt-template.md`
+2. **Locate problem files** in appropriate category folder
+3. **Analyze implementation status** - TODO vs actual code
+4. **Assess code quality** - patterns, complexity, edge cases
+5. **Run test suite** and report results with specific failures
+6. **Provide detailed feedback** - performance analysis and improvement suggestions
+
+#### Solution Generation Workflow  
+1. **Use the prompt template** from `docs/solution-prompt-template.md`
+2. **Analyze problem requirements** from .md file and constraints
+3. **Generate multiple approaches** - intuitive, optimized, alternative patterns
+4. **Implement working solutions** with proper complexity analysis
+5. **Provide comparison table** of approaches with trade-offs
+6. **Include testing guidance** and learning reinforcement notes
+
+### Critical Rules for All Commands
+
+#### Generation Rules (gen command):
 - **CHECK if problem already exists first** - skip generation if any files exist
 - **DO NOT overwrite existing problems** - respect existing implementations
 - **DO NOT implement function bodies** - leave empty with `// TODO: Implement solution`
@@ -60,6 +85,22 @@ When the user says "gen {number}", generate a LeetCode problem setup:
 - **DO keep .md files simple** - only problem description, constraints, examples
 - **DO add algorithm tracking to problems/README.md** with [Status: TODO]
 
+#### Analysis Rules (check command):
+- **DO run actual tests** - provide concrete test results and failures
+- **DO analyze time/space complexity** - identify performance issues
+- **DO suggest specific optimizations** - actionable improvement advice
+- **DO check edge case handling** - null, empty, boundary conditions
+- **DO provide encouraging feedback** - constructive and helpful tone
+- **DO reference optimal complexity** - compare against known solutions
+
+#### Solution Rules (solution command):
+- **DO generate working code** - complete implementations, not TODOs
+- **DO provide multiple approaches** - intuitive, optimized, alternatives  
+- **DO include complexity analysis** - Big O for time and space
+- **DO comment out alternatives** - preserve original when adding approaches
+- **DO explain trade-offs** - when to use each approach
+- **DO focus on learning** - teach patterns, not just solve problems
+
 ## Commands
 
 ### Testing
@@ -68,6 +109,7 @@ When the user says "gen {number}", generate a LeetCode problem setup:
 - `pnpm test:auto` - Auto-run related tests when files change using custom watcher
 - `pnpm jest --findRelatedTests <file>` - Run tests for specific file
 - `pnpm jest <pattern>` - Run tests matching a specific pattern
+
 
 ### Package Management
 - `pnpm install` - Install dependencies
@@ -120,6 +162,8 @@ Tests are organized into 5 standard describe blocks:
 - Uses chokidar to watch .js files (excluding .test.js) and runs related tests
 - Excludes test files from triggering to prevent loops
 - `docs/leetcode-prompt-template.md` contains the generation workflow template
+- `docs/check-prompt-template.md` contains the solution analysis workflow template
+- `docs/solution-prompt-template.md` contains the AI solution generation workflow template
 - `docs/problem_categories.json` provides automatic category detection system
 
 ## AI Code Suggestions
