@@ -3,8 +3,6 @@
  * @param {number} k
  * @return {number}
  */
-
-// AABACCA - 1
 var characterReplacement = function (s, k) {
   if (s.length === 0) return 0;
 
@@ -20,6 +18,7 @@ var characterReplacement = function (s, k) {
     while (right - left + 1 - maxCount > k) {
       charCount[s[left]]--;
       left++;
+      maxCount = Math.max(maxCount, charCount[s[left]]);
     }
 
     maxLength = Math.max(maxLength, right - left + 1);

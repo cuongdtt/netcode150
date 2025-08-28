@@ -80,11 +80,11 @@ describe("Longest Repeating Character Replacement - Boundary Conditions", () => 
 
 describe("Longest Repeating Character Replacement - Complex Scenarios", () => {
   test("Multiple character frequencies", () => {
-    expect(characterReplacement("AABABBA", 2)).toBe(6);
+    expect(characterReplacement("AABABBA", 2)).toBe(5);
   });
 
   test("Long string with mixed patterns", () => {
-    expect(characterReplacement("AABABBAABABBA", 2)).toBe(8);
+    expect(characterReplacement("AABABBAABABBA", 2)).toBe(5);
   });
 
   test("Stress test with many different characters", () => {
