@@ -3,6 +3,7 @@
  * @param {number[]} nums
  * @return {number}
  */
+// Solution Quality: ⭐⭐⭐⭐⭐ (Optimal sliding window solution)
 var minSubArrayLen = function (target, nums) {
   let minSize = Number.MAX_SAFE_INTEGER;
   let currentSubArray = 0;
