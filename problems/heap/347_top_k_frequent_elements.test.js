@@ -59,7 +59,7 @@ describe("Top K Frequent Elements - Common Patterns", () => {
 
   test("should handle negative numbers only", () => {
     const result = topKFrequent([-5, -5, -3, -3, -3, -1], 2);
-    expect(result.sort()).toEqual([-5, -3]);
+    expect(result.sort((a, b) => a - b)).toEqual([-5, -3]);
   });
 
   test("should handle zero values", () => {
