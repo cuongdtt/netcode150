@@ -93,83 +93,83 @@ module.exports = { topKFrequent };
 ```javascript
 // Alternative: Min-Heap Approach
 // Time: O(n log k), Space: O(n + k)
-// var topKFrequent = function (nums, k) {
-//     const freqMap = new Map();
-//     
-//     // Count frequencies - O(n)
-//     for (const num of nums) {
-//         freqMap.set(num, (freqMap.get(num) || 0) + 1);
-//     }
-//     
-//     // Min-heap to maintain top k frequent elements
-//     const minHeap = [];
-//     
-//     // Helper functions for min-heap operations
-//     const parent = (i) => Math.floor((i - 1) / 2);
-//     const leftChild = (i) => 2 * i + 1;
-//     const rightChild = (i) => 2 * i + 2;
-//     
-//     const swap = (i, j) => {
-//         [minHeap[i], minHeap[j]] = [minHeap[j], minHeap[i]];
-//     };
-//     
-//     const heapifyUp = (index) => {
-//         while (index > 0 && minHeap[parent(index)][0] > minHeap[index][0]) {
-//             swap(parent(index), index);
-//             index = parent(index);
-//         }
-//     };
-//     
-//     const heapifyDown = (index) => {
-//         let minIndex = index;
-//         const left = leftChild(index);
-//         const right = rightChild(index);
-//         
-//         if (left < minHeap.length && minHeap[left][0] < minHeap[minIndex][0]) {
-//             minIndex = left;
-//         }
-//         if (right < minHeap.length && minHeap[right][0] < minHeap[minIndex][0]) {
-//             minIndex = right;
-//         }
-//         
-//         if (minIndex !== index) {
-//             swap(index, minIndex);
-//             heapifyDown(minIndex);
-//         }
-//     };
-//     
-//     const insert = (freq, element) => {
-//         minHeap.push([freq, element]);
-//         heapifyUp(minHeap.length - 1);
-//     };
-//     
-//     const extractMin = () => {
-//         if (minHeap.length === 0) return null;
-//         const min = minHeap[0];
-//         minHeap[0] = minHeap[minHeap.length - 1];
-//         minHeap.pop();
-//         if (minHeap.length > 0) heapifyDown(0);
-//         return min;
-//     };
-//     
-//     // Build heap with top k frequent elements - O(n log k)
-//     for (const [element, freq] of freqMap) {
-//         if (minHeap.length < k) {
-//             insert(freq, element);
-//         } else if (freq > minHeap[0][0]) {
-//             extractMin();
-//             insert(freq, element);
-//         }
-//     }
-//     
-//     // Extract results from heap
-//     const result = [];
-//     while (minHeap.length > 0) {
-//         result.push(extractMin()[1]);
-//     }
-//     
-//     return result;
-// };
+var topKFrequent = function (nums, k) {
+    const freqMap = new Map();
+    
+    // Count frequencies - O(n)
+    for (const num of nums) {
+        freqMap.set(num, (freqMap.get(num) || 0) + 1);
+    }
+    
+    // Min-heap to maintain top k frequent elements
+    const minHeap = [];
+    
+    // Helper functions for min-heap operations
+    const parent = (i) => Math.floor((i - 1) / 2);
+    const leftChild = (i) => 2 * i + 1;
+    const rightChild = (i) => 2 * i + 2;
+    
+    const swap = (i, j) => {
+        [minHeap[i], minHeap[j]] = [minHeap[j], minHeap[i]];
+    };
+    
+    const heapifyUp = (index) => {
+        while (index > 0 && minHeap[parent(index)][0] > minHeap[index][0]) {
+            swap(parent(index), index);
+            index = parent(index);
+        }
+    };
+    
+    const heapifyDown = (index) => {
+        let minIndex = index;
+        const left = leftChild(index);
+        const right = rightChild(index);
+        
+        if (left < minHeap.length && minHeap[left][0] < minHeap[minIndex][0]) {
+            minIndex = left;
+        }
+        if (right < minHeap.length && minHeap[right][0] < minHeap[minIndex][0]) {
+            minIndex = right;
+        }
+        
+        if (minIndex !== index) {
+            swap(index, minIndex);
+            heapifyDown(minIndex);
+        }
+    };
+    
+    const insert = (freq, element) => {
+        minHeap.push([freq, element]);
+        heapifyUp(minHeap.length - 1);
+    };
+    
+    const extractMin = () => {
+        if (minHeap.length === 0) return null;
+        const min = minHeap[0];
+        minHeap[0] = minHeap[minHeap.length - 1];
+        minHeap.pop();
+        if (minHeap.length > 0) heapifyDown(0);
+        return min;
+    };
+    
+    // Build heap with top k frequent elements - O(n log k)
+    for (const [element, freq] of freqMap) {
+        if (minHeap.length < k) {
+            insert(freq, element);
+        } else if (freq > minHeap[0][0]) {
+            extractMin();
+            insert(freq, element);
+        }
+    }
+    
+    // Extract results from heap
+    const result = [];
+    while (minHeap.length > 0) {
+        result.push(extractMin()[1]);
+    }
+    
+    return result;
+};
 ```
 
 **Trade-offs:**
@@ -184,34 +184,34 @@ module.exports = { topKFrequent };
 ```javascript
 // Advanced: Bucket Sort Approach
 // Time: O(n), Space: O(n)
-// var topKFrequent = function (nums, k) {
-//     const freqMap = new Map();
-//     
-//     // Count frequencies - O(n)
-//     for (const num of nums) {
-//         freqMap.set(num, (freqMap.get(num) || 0) + 1);
-//     }
-//     
-//     // Create buckets where index = frequency
-//     const buckets = Array(nums.length + 1).fill(null).map(() => []);
-//     
-//     // Place elements in buckets by frequency - O(n)
-//     for (const [element, freq] of freqMap) {
-//         buckets[freq].push(element);
-//     }
-//     
-//     // Collect top k elements from highest frequency buckets - O(n)
-//     const result = [];
-//     for (let i = buckets.length - 1; i >= 0 && result.length < k; i--) {
-//         for (const element of buckets[i]) {
-//             if (result.length < k) {
-//                 result.push(element);
-//             }
-//         }
-//     }
-//     
-//     return result;
-// };
+var topKFrequent = function (nums, k) {
+    const freqMap = new Map();
+    
+    // Count frequencies - O(n)
+    for (const num of nums) {
+        freqMap.set(num, (freqMap.get(num) || 0) + 1);
+    }
+    
+    // Create buckets where index = frequency
+    const buckets = Array(nums.length + 1).fill(null).map(() => []);
+    
+    // Place elements in buckets by frequency - O(n)
+    for (const [element, freq] of freqMap) {
+        buckets[freq].push(element);
+    }
+    
+    // Collect top k elements from highest frequency buckets - O(n)
+    const result = [];
+    for (let i = buckets.length - 1; i >= 0 && result.length < k; i--) {
+        for (const element of buckets[i]) {
+            if (result.length < k) {
+                result.push(element);
+            }
+        }
+    }
+    
+    return result;
+};
 ```
 
 **Advanced Techniques:**
