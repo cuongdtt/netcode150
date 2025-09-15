@@ -2,6 +2,19 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## 🚀 AUTOMATED COMMAND SYSTEM
+
+**CRITICAL**: This repository uses automatic prompt template selection. When the user provides specific commands, immediately apply the corresponding template:
+
+| Command Pattern | Auto-Select Template | Action |
+|----------------|---------------------|---------|
+| `gen {number}` | `@docs/leetcode-prompt-template.md` | Generate problem setup |
+| `check {number}` | `@docs/check-prompt-template.md` | Analyze solution |
+| `solution {number}` | `@docs/solution-prompt-template.md` | Generate AI solutions |
+| `problem {number}` | `@docs/problem-template.md` | Create structure template |
+
+**NO USER CONFIRMATION NEEDED** - Apply templates automatically when commands are detected.
+
 ## Overview
 
 This is a LeetCode problem-solving repository containing algorithmic solutions organized by problem categories. Each problem has its own folder with JavaScript solutions and comprehensive Jest tests using snake_case naming conventions.
@@ -33,14 +46,24 @@ This is a LeetCode problem-solving repository containing algorithmic solutions o
 
 ## LeetCode Problem Commands
 
+### Automatic Prompt Template Selection
+When the user provides a command, automatically select and use the corresponding prompt template:
+
+| User Command | Auto-Select Template | Purpose |
+|--------------|---------------------|---------|
+| `gen {number}` | `@docs/leetcode-prompt-template.md` | Generate LeetCode problem setup |
+| `check {number}` | `@docs/check-prompt-template.md` | Analyze and verify solution correctness |
+| `solution {number}` | `@docs/solution-prompt-template.md` | Generate AI-powered solutions |
+| `problem {number}` | `@docs/problem-template.md` | Create problem structure template |
+
 ### Problem Generation
-When the user says "gen {number}", generate a LeetCode problem setup:
+When the user says "gen {number}", **automatically use** `@docs/leetcode-prompt-template.md`:
 
 ### Solution Analysis  
-When the user says "check {number}", analyze and verify solution correctness and efficiency:
+When the user says "check {number}", **automatically use** `@docs/check-prompt-template.md`:
 
 ### Solution Generation
-When the user says "solution {number}", generate AI-powered solutions with multiple approaches:
+When the user says "solution {number}", **automatically use** `@docs/solution-prompt-template.md`:
 
 #### Problem Generation Workflow
 1. **Check if problem already exists** - Skip generation if files exist
@@ -68,6 +91,36 @@ When the user says "solution {number}", generate AI-powered solutions with multi
 4. **Implement working solutions** with proper complexity analysis
 5. **Provide comparison table** of approaches with trade-offs
 6. **Include testing guidance** and learning reinforcement notes
+
+## Command Processing Rules
+
+### Automatic Template Selection Logic
+**CRITICAL**: When the user provides any of these commands, immediately and automatically apply the corresponding template without asking:
+
+```
+IF user_input matches "gen {number}" OR "generate {number}":
+    → AUTO-APPLY: @docs/leetcode-prompt-template.md
+    → ACTION: Generate problem setup files
+
+IF user_input matches "check {number}" OR "analyze {number}":
+    → AUTO-APPLY: @docs/check-prompt-template.md  
+    → ACTION: Analyze existing solution
+
+IF user_input matches "solution {number}" OR "solve {number}":
+    → AUTO-APPLY: @docs/solution-prompt-template.md
+    → ACTION: Generate AI solutions
+
+IF user_input matches "problem {number}" OR "template {number}":
+    → AUTO-APPLY: @docs/problem-template.md
+    → ACTION: Create problem structure
+```
+
+### Command Aliases
+Support these variations for user convenience:
+- **Generation**: `gen`, `generate`, `create`, `setup`
+- **Analysis**: `check`, `analyze`, `verify`, `test`, `validate`  
+- **Solution**: `solution`, `solve`, `implement`, `code`
+- **Template**: `problem`, `template`, `structure`
 
 ### Critical Rules for All Commands
 

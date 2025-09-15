@@ -1,5 +1,30 @@
 # Cursor Rules for LeetCode Problem Solving Repository
 
+## 🚀 AUTOMATED PROMPT TEMPLATE SELECTION
+
+**CRITICAL**: When user provides specific commands, automatically apply the corresponding prompt template WITHOUT asking for confirmation:
+
+| User Command | Auto-Apply Template | Action |
+|--------------|-------------------|---------|
+| `gen {number}` | `@docs/leetcode-prompt-template.md` | Generate LeetCode problem setup |
+| `check {number}` | `@docs/check-prompt-template.md` | Analyze and verify solution |
+| `solution {number}` | `@docs/solution-prompt-template.md` | Generate AI-powered solutions |
+| `problem {number}` | `@docs/problem-template.md` | Create problem structure template |
+
+### Command Aliases (all trigger same templates):
+- **Generation**: `gen`, `generate`, `create`, `setup` → `@docs/leetcode-prompt-template.md`
+- **Analysis**: `check`, `analyze`, `verify`, `test`, `validate` → `@docs/check-prompt-template.md`
+- **Solution**: `solution`, `solve`, `implement`, `code` → `@docs/solution-prompt-template.md`
+- **Template**: `problem`, `template`, `structure` → `@docs/problem-template.md`
+
+### Processing Logic:
+```
+IF user_input matches pattern "{command} {number}":
+    → IMMEDIATELY apply corresponding template
+    → NO confirmation needed
+    → Execute template instructions automatically
+```
+
 ## JavaScript Files (.js)
 - DO NOT provide code completions or suggestions for .js files
 - DO NOT auto-implement function bodies 
@@ -24,8 +49,29 @@
 - Help with documentation structure
 - Allow content suggestions for problem descriptions
 
+## Template Execution Rules
+
+### Automatic Template Application:
+- **NEVER ask user to confirm template selection** - apply immediately
+- **ALWAYS follow template instructions completely** - don't skip steps
+- **REFERENCE template files directly** using @ syntax when needed
+- **EXECUTE all template workflows** as specified in the docs
+
+### Template Priority Order:
+1. **First**: Detect command pattern in user input
+2. **Second**: Auto-select corresponding template file
+3. **Third**: Apply template instructions without deviation
+4. **Fourth**: Execute all required actions from template
+
+### Error Handling:
+- If command pattern unclear, ask for clarification
+- If template file missing, notify user and suggest alternatives
+- If template execution fails, provide specific error details
+
 ## General Rules
 - Never auto-complete LeetCode solution algorithms while typing
 - Support learning through chat-based validation and explanation
 - Focus on project structure and tooling support
 - Maintain clean separation between setup and implementation
+- **ALWAYS use automated template selection for recognized commands**
+- **NEVER bypass template system for gen/check/solution/problem commands**
